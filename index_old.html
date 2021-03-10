@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="keywords" content="corona virus, NSC Total, mapa, propagaçao, Santa Catarina, Curva de crescimento" />
+    <meta name="description" content="Mapa de Propagaçao do Corona Virus no Estado de Santa Catarina pela NSC Total" />
+    <meta name="author" content="NSC Total" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="./css/mapa.css" />
+
+
+    <title>Mapa do Corona Virus em Santa Catarina</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h2 class="ml-2"><b>Mapa do vírus em Santa Catarina</b></h2>
+        <p class="ml-2">Acompanhe o avanço da covid-19 no Estado, detalhes de casos confirmados, ativos, curados, mortes, ocupação de leitos e onde buscar atendimento. O Painel do Coronavírus é atualizado diariamente e usa como base dados oficiais do governo do Estado e do Ministério da Saúde. Clique sobre o município desejado para ver mais informações</p>
+        <div class="cont" id="#topo">
+            <div class="row margin-mobile m-0 mb-1">
+                <div class="col-xl-2 col-lg-2 col-sm-12 col-12 p-0">
+                    <div class="card-counter success">
+                        <i class="fa fa-users" style="margin-top: -1px; margin-left: -20px"></i>
+                        <span class="count-name">Casos confirmados</span>
+                        <div class="d-flex align-items-end flex-column">
+                            <small class="badge badge-pill badge-danger badge-kpi  mr-2" id="newCases"></small>
+                            <div class="count-numbers mt-auto p-2" id="qtdConfirm"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-sm-12 col-12 p-0">
+                    <div class="card-counter success">
+                        <i class="fas fa-calendar-day"></i>
+                        <span class="count-name">Primeira confirmação</span>
+                        <span class="count-numbers" id="dtPConfirm"></span>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-sm-12 col-12 p-0">
+                    <div class="card-counter success">
+                        <i class="far fa-calendar-check"></i>
+                        <span class="count-name">Caso mais recente</span>
+                        <span class="count-numbers" id="dtConfirmNew"></span>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-sm-12 col-12 p-0">
+                    <div class="card-counter success">
+                        <i class="fas fa-city"></i>
+                        <span class="count-name">Cidades afetadas</span>
+                        <span class="count-numbers" id="cityAfected"></span>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-sm-12 col-12 p-0">
+                    <div class="card-counter danger">
+                        <i class="fas fa-cross"></i>
+                        <span class="count-name">Mortes confirmadas</span>
+                        <div class="d-flex align-items-end flex-column">
+                            <small class="badge badge-pill badge-danger badge-kpi mr-1" id="newDeaths"></small>
+                            <span class="count-numbers" id="qtdMorte"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-sm-12 col-12 p-0">
+                    <div class="card-counter danger">
+                        <i class="fa fa-calendar" style="margin-top: -1px; margin-left: -20px"></i>
+                        <span class="count-name">Morte mais recente </span>
+                        <span class="count-numbers" id="dtMorte"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-md-9 col-12 m-0 p-0 mb-4">
+                    <div class='badge badge-light font13 text-left hidden-desktop mx-auto mt-2 mb-2 p-2'> <i class='fas fa-info-circle'></i> Toque sobre um município para ver detalhes</div>
+                    <div id="loadLinks">
+                        <div id="map" class="animated fadeIn"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="title-mapas">ESCOLHA UM DOS MAPAS PARA VISUALIZAR</div>
+                            <div class="container-minimaps">
+                                <div class="module mid shaded-mapa1" onclick="trocaMapaUm()">
+                                    <h2 class="text-center">Corona Vírus em SC</h2>
+                                </div>
+                                <div class="module mid shaded-mapa2" onclick="trocaMapaDois()">
+                                    <h2 class="text-center">Postos de Saúde em SC</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 legend-map">
+                            <img src="./img/legenda.jpg" class="img-legend">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12 m-0 p-0">
+                    <div class="row m-0 p-0">
+                        <div class="col-12">
+                            <div id="maxData" class="badge badge-warning"></div>
+                        </div>
+                        <div class="col-12 m-0 p-0">
+                            <iframe width="300" height="151" seamless frameborder="0" scrolling="no"
+                                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQA-2MrZI4mRbE4likrEmbIWf0mpqF9rv6N6yDjdOhruvLZE-CYQdCwEP3r2Dg_OxPPn3jnvL8GRHIw/pubchart?oid=1948737110&amp;format=interactive"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="row m-0 p-0">
+                        <div class="col-12 m-0 p-0">
+                            <iframe width="300" height="475" seamless frameborder="0" scrolling="yes"
+                                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQA-2MrZI4mRbE4likrEmbIWf0mpqF9rv6N6yDjdOhruvLZE-CYQdCwEP3r2Dg_OxPPn3jnvL8GRHIw/pubchart?oid=1211889197&amp;format=interactive"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="row m-0 p-0">
+                        <div class="col-12 hidden-mobile">
+                            <img src="./img/nsc.svg" alt="nsc comunicação logo" class="img-logo-rodape"
+                                style="margin-top: 1px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mt-4">
+                <a href="https://www.nsctotal.com.br/coronavirus"></a>
+                <h2 class="ml-2"><b>Novas mortes confirmadas em Santa Catarina</b></h2>
+                <p class="ml-2">Perfis das pessoas que morreram por covid-19, ordenados pela data mais recente de confirmação dos óbitos. As informações são extraídas diariamente pela reportagem da NSC a partir dos dados do Estado</p>
+                </a>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12 col-12">
+                <iframe src="https://flo.uri.sh/visualisation/3561978/embed" width="100%" height="550px"
+                    frameborder="0" border="0" cellspacing="0" scrolling="no"
+                    style="margin:auto;border-width:4px;border-style:solid;border-color:#FFFFFF;"></iframe>
+            </div>
+        </div>
+
+        <hr class="hr-corona-corpo">
+
+        <div class="row">
+            <div class="col-12 mt-4">
+                <a href="https://www.nsctotal.com.br/coronavirus"></a>
+                <h2 class="ml-2"><b>Perfil das mortes em Santa Catarina</b></h2>
+                <p class="ml-2">Detalhes de óbitos por data, semana, cidade e o perfil das vítimas de covid-19. Clique nas setas para navegar entre os dados.</p>
+                </a>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12 col-12">
+                <iframe src="https://flo.uri.sh/story/541707/embed" width="100%" height="500px"
+                    frameborder="0" border="0" cellspacing="0" scrolling="no"
+                    style="margin:auto;border-width:4px;border-style:solid;border-color:#FFFFFF;"></iframe>
+            </div>
+        </div>
+
+        <hr class="hr-corona-corpo">
+
+
+        <div class="row">
+            <div class="col-12 mt-4">
+                <a href="https://www.nsctotal.com.br/coronavirus"></a>
+                <h2 class="ml-2"><b>Perfil dos casos de coronavírus</b></h2>
+                <p class="ml-2">Detalhes dos pacientes diagnosticados com covid-19 com data de provável infecção, idade, gênero e cidade, além de dados de casos ainda em tratamento, curados e as curvas de tendência por região. Clique nas setas para navegar entre os dados.</p>
+                </a>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12 col-12">
+                <iframe src="https://flo.uri.sh/story/541729/embed" width="100%" height="500px"
+                    frameborder="0" border="0" cellspacing="0" scrolling="no"
+                    style="margin:auto;border-width:4px;border-style:solid;border-color:#FFFFFF;"></iframe>
+            </div>
+        </div>
+
+        <hr class="hr-corona-corpo">
+
+
+        <div class="row">
+            <div class="col-12 mt-4">
+                <a href="https://www.nsctotal.com.br/coronavirus"></a>
+                <h2 class="ml-2"><b>Situação dos hospitais em Santa Catarina</b></h2>
+                <p class="ml-2">Confira a taxa média de ocupação dos leitos das redes pública e privada para casos confirmados e suspeitos de covid-19, segundo dados do governo do Estado.</p>
+                </a>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12 col-12">
+                <iframe src="https://flo.uri.sh/story/541740/embed" width="100%" height="500px"
+                    frameborder="0" border="0" cellspacing="0" scrolling="no"
+                    style="margin:auto;border-width:4px;border-style:solid;border-color:#ffffff;"></iframe>
+            </div>
+        </div>
+
+        <hr class="hr-corona-corpo">
+
+        <div class="row mt-2">
+            <div class="col-12 mt-5">
+                <h2 class="ml-2"><b>Curva de crescimento do coronavírus no Brasil e nos Estados</b></h2>
+                <p class="ml-2">Histórico de mortes e casos registrados no Brasil desde o primeiro paciente confirmado com covid-19 e comparação da situação de SC com os demais Estados.</p>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12 col-12">
+                <iframe src="https://flo.uri.sh/story/541743/embed" width="100%" height="500px"
+                    frameborder="0" border="0" cellspacing="0" scrolling="no"
+                    style="margin:auto;border-width:4px;border-style:solid;border-color:#FFFFFF;"></iframe>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12 text-left mt-4 mb-4">
+                <h2>
+                    <a href="https://www.nsctotal.com.br/coronavirus" target="_self" class="text-link">
+                        <b> Veja todas as notícias sobre o coronavírus em Santa Catarina e no Brasil na página
+                            especial </b>
+                    </a>
+                </h2>
+            </div>
+        </div>
+        <hr class="m-5 hr-corona">
+        <div class="row">
+            <div class="col-12 text-center">
+                PAINEL DO CORONAVÍRUS
+            </div>
+            <div class="col-12 mt-2 mb-2">
+                <h6 class="color-nsctotal text-center">Clique e compartilhe nas redes</h6>
+                <div class="col-md-12 col-sm-12 text-center">
+                    <a href="https://twitter.com/intent/tweet?text=https://www.nsctotal.com.br/coronavirus/mapa-de-evolucao-do-virus" class="fa fa-twitter"></a>
+
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.nsctotal.com.br/coronavirus/mapa-de-evolucao-do-virus" target="_blank"
+                    title="Compartilhar no Facebook" class="fa fa-facebook"></a>
+
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.nsctotal.com.br/coronavirus/mapa-de-evolucao-do-virus&title=Painel do Corona Vírus em SC&summary=Mapa da Evolução do Corona Vírus em Santa Catarina&source=NSC Total"
+                    target="_blank" title="Compartilhar no LinkedIn" class="fa fa-linkedin"></a>
+
+
+                    <a href="https://www.instagram.com/nsctotal/?hl=pt-br" target="_blank" title="Curta-nos no Instagram" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="col-12">
+                <h5><b>Participe</b></h5>
+                Tem dúvidas, sugestões ou comentários?
+                <p><b>Escreva para: </b>  <a href="cristian.weiss@somosnsc.com.br">cristian.weiss@somosnsc.com.br</a></p>
+            </div>
+            <div class="col-10">
+                <p><b>Produção:</b> NSC Total e NSC Lab</p>
+                <p>
+                    <b>Jornalismo de dados:</b>
+                    <br>
+                    <a href="mailto:cristian.weiss@somosnsc.com.br">Cristian Edel Weiss</a>
+                </p>
+                <p>
+                    <b>Reportagem:</b>
+                    <br>
+                    <a href="mailto:clarissa.cervieri@somosnsc.com.br">Clarissa Battistella </a> <br>
+                    <a href="mailto:guilherme.fernandes@somosnsc.com.br">Guilherme Simon Fernandes </a> <br>
+                    <a href="mailto:jean.laurindo@somosnsc.com.br">Jean Laurindo</a> <br>
+                    <a href="mailto:lariane.cargnini@somosnsc.com.br">Lariane Cagnini</a> <br>
+                    <a href="mailto:lucas.paraizo@somosnsc.com.br">Lucas Paraizo</a>
+                </p>
+                <p>
+                    <b>Design:</b>
+                    <br>
+                    <a href="mailto:maiara.santos@somosnsc.com.br">Maiara Santos</a>
+                    <p>
+                        <b>Desenvolvimento web:</b>
+                        <br>
+                        <a href="mailto:bruno.scheibler@somosnsc.com.br">Bruno Scheibler </a>
+                        <br>
+                        <a href="mailto:thiago.thomaz@somosnsc.com.br">Thiago Lúcio Bittencourt Thomaz </a>
+                    </p>
+            </div>
+            <div class="col-2">
+                 <!-- BOTAO VOLTAR AO TOPO -->
+                <!-- <a class="btn btn-sm btn-info mb-5 mr-4 btn-voltar-topo float-right" href="#">voltar ao topo</a> -->
+
+                <a href="#" id="go-to-top" class="btn btn-sm btn-info mb-5 mr-4 btn-voltar-topo float-right">Voltar ao Topo</a>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="./js/leaflet.js"></script>
+    <script type="text/javascript" src="./js/leaflet-providers.js"></script>
+
+    <script type="text/javascript" src="./js/postos.js"></script>
+    <script type="text/javascript" src="./js/cidades.js"></script>
+    <script type="text/javascript" src="./js/municipios-sc.js"></script>
+    <script type="text/javascript" src="./js/maps/mapa.js"></script>
+    <script type="text/javascript" src="./js/maps/postos.js"></script>
+
+    <script src="https://spreadsheets.google.com/feeds/list/18aj1TPYZxwEwxRvqdXj-hgJpQda2A1ny9S0QaIHBp-o/12/public/values?alt=json-in-script&callback=saveDict"></script>
+    <script src="https://spreadsheets.google.com/feeds/cells/18aj1TPYZxwEwxRvqdXj-hgJpQda2A1ny9S0QaIHBp-o/3/public/values?alt=json-in-script&callback=saveKpi"></script>
+    <script src="https://spreadsheets.google.com/feeds/list/18aj1TPYZxwEwxRvqdXj-hgJpQda2A1ny9S0QaIHBp-o/2/public/values?alt=json-in-script&callback=saveNdeaths"></script>
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script>
+        $(function () { $('[data-toggle="tooltip"]').tooltip() });
+        $('#go-to-top').each(function(){
+        $(this).click(function(){
+            $('html,body').animate({ scrollTop: 0 }, 'slow');
+            return false;
+        });
+        });
+    </script>
+
+</body>
+
+</html>

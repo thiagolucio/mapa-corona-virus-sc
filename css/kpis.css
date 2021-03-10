@@ -1,0 +1,28 @@
+.card-kpi {
+  border-radius: 0;
+  min-width: 200px;
+  border: 0;
+  margin: 1%;
+}
+.card-kpi .fa-stack {
+  margin-top: 12px;
+}
+.card-kpi .card-body {
+  padding: 0.5rem 0.5rem;
+}
+.card-kpi .card-title,
+.card-kpi .card-text {
+  font-weight: bold;
+  text-align: right;
+}
+.card-tite-one-line {
+  width: 138px;
+  margin-left: -10px !important;
+}
+.bg-icon-kpi {
+  color: rgba(106, 105, 104, 0.4) !important;
+}
+
+.h90 {
+  height: 90px;
+}

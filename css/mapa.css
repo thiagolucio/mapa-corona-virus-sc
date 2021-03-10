@@ -1,0 +1,594 @@
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/open-sans-v18-latin-regular.eot");
+  src: local(""), url("../fonts/open-sans-v18-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans-v18-latin-regular.woff2") format("woff2"), url("../fonts/open-sans-v18-latin-regular.woff") format("woff"), url("../fonts/open-sans-v18-latin-regular.ttf") format("truetype"), url("../fonts/open-sans-v18-latin-regular.svg#OpenSans") format("svg");
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  font-weight: 800;
+  src: url("../fonts/roboto-condensed-v19-latin-regular.woff") format("woff"), url("../fonts/Roboto Condensed.svg#roboto-condensed") format("svg"), url("../fonts/roboto-condensed-v19-latin-regular.eot"), url("../fonts/roboto-condensed-v19-latin-regular.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.roboto-font {
+  font-family: "Roboto Condensed", sans-serif !important;
+}
+
+.roboto-font {
+  font-family: "Open Sans", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  color: #4f5050;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: "Open Sans", sans-serif;
+}
+
+p {
+  font-weight: 300;
+  color: #4f5050;
+}
+
+a {
+  color: #6f3f79;
+}
+
+a:hover {
+  color: #b77fac;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.font13 {
+  font-size: 13px;
+}
+
+.font16 {
+  font-size: 16px;
+}
+
+.font18 {
+  font-size: 18px;
+}
+
+.font20 {
+  font-size: 20px;
+}
+
+.font22 {
+  font-size: 22px;
+}
+
+.text-red {
+  color: #c10c0f;
+}
+
+.text-accent {
+  color: #ba5b9e;
+}
+
+.color-nsctotal {
+  color: #ff6915;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+/* CARDS DO TOPO */
+.card-counter {
+  height: 90px;
+  padding: 8px;
+  background-color: #f7f7f7;
+  margin-right: 4px;
+  border-radius: 0px;
+  transition: 0.3s linear all;
+}
+
+.card-counter.danger {
+  background-color: #ba5b9e;
+  color: #fff;
+}
+
+.card-counter i {
+  font-size: 2.5em;
+  opacity: 0.2;
+  margin-top: 20px;
+}
+
+/* FINAL CARTOES */
+.badge-danger {
+  background: #ba5b9e;
+}
+
+.badge-warning {
+  background: #fbba00;
+}
+
+.hr-corona {
+  border-top: 1px solid #4f5050;
+}
+
+.hr-corona-corpo {
+  border-top: 1px solid #b9b9b9;
+  margin: 2% 20% !important;
+}
+
+.hr-popup {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn-nsc {
+  background-color: #ff6915;
+  color: white;
+}
+
+.btn-nsc:hover {
+  background-color: #ee9458;
+  color: white;
+}
+
+.cont {
+  width: 100%;
+  height: auto;
+  padding: 4px;
+}
+
+#map, #map2 {
+  width: 100%;
+  height: 660px;
+  border: 1px solid #ffffff;
+}
+
+.img-legend {
+  width: 350px;
+  height: auto;
+  float: left;
+  margin-top: 4px;
+}
+
+.img-logo-rodape {
+  width: 75px;
+  height: 70px;
+  margin: -28px 0 0 160px;
+}
+
+.info h4 {
+  margin: 0 0 5px;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.info {
+  margin-top: 1500px;
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  -webkit-box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.65);
+  -moz-box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.65);
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.65);
+}
+
+.legend {
+  display: none;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+/* Minimaps */
+.container-minimaps {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.module {
+  width: 119px;
+  height: 119px;
+  margin: 10px 0 0 10px;
+  position: relative;
+  float: left;
+  border-radius: 4px;
+}
+
+.module:hover, .module:active, .module:focus {
+  border: 3px solid #6f3f79;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.mid h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 14px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.mid h2:hover {
+  color: transparent;
+}
+
+.leaflet-container {
+  outline: 0;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  top: 3px;
+  right: 5px;
+  color: #53f8fd;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: #333333 !important;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+}
+
+.leaflet-popup-content>b {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.leaflet-popup-content a:link, .leaflet-popup-content a:visited {
+  color: #53f8fd;
+  text-decoration: underline;
+}
+
+.leaflet-container .leaflet-control-attribution {
+  display: none;
+}
+
+.help-saude {
+  width: 320px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: left !important;
+  margin-bottom: 16px;
+}
+
+.list-group-item {
+  border: none;
+  margin: 8px;
+}
+
+.list-group-item>div {
+  width: 48px;
+  height: 48px;
+  background: #ff5b34;
+  border-radius: 50%;
+}
+
+.list-group-item>div:hover {
+  width: 48px;
+  height: 48px;
+  background: rgb(153, 40, 12);
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.list-group-item div i {
+  color: #fff;
+  font-size: 18px;
+  text-indent: 16px;
+  margin-top: 5px;
+}
+
+/* BOTOES SOCIAIS */
+.fa {
+  padding: 20px;
+  font-size: 24px;
+  width: 64px;
+  height: 64px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+  opacity: 0.7;
+  text-decoration: none;
+  color: white;
+}
+
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55acee;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: #9b2f77;
+  color: white;
+}
+
+/* Apenas animacao*/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.fast {
+  -webkit-animation-duration: 800ms;
+  animation-duration: 800ms;
+}
+
+.animated.faster {
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+}
+
+.animated.slow {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+.animated.slower {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+}
+
+@media (print), (prefers-reduced-motion:reduce) {
+  .animated {
+    -webkit-animation-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    -webkit-transition-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.poptitle {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 16px
+}
+
+.div-city-name-popup {
+  text-align: center !important;
+}
+
+.city-name-popup {
+  width: 100% !important;
+  font-size: 16px !important;
+  font-family: "Roboto Condensed", sans-serif !important;
+  font-weight: 900;
+}
+
+.card-city-name-popup {
+  width: 80px;
+  height: auto;
+  border: none
+}
+
+.card-city-name-popup .card-header {
+  border: none;
+  background: transparent;
+  font-size: 20px
+}
+
+.card-city-name-popup .card-body .card-title,
+.card-city-name-popup .card-body .card-text {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-weight: bold;
+  font-family: "Roboto Condensed", sans-serif !important
+}
+
+.card-city-name-popup .card-body .card-title {
+  font-size: 20px
+}
+
+.card-city-name-popup .card-body .card-text {
+  font-size: 12px
+}
+
+.close-btn {
+  position: absolute !important;
+  border-radius: 50% !important;
+  padding: .5rem !important;
+  background-color: #dc3545 !important;
+  left: 97% !important;
+  top: 0.5 !important;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width:1025px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width:1024px) {
+  .custom-select {
+    width: 180px !important;
+  }
+
+  .leaflet-bottom .leaflet-control {
+    height: 20px;
+    margin-left: -15px !important;
+  }
+
+  .leaflet-right .leaflet-control {
+    min-width: 312px !important
+  }
+
+  .poptitle {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 16px
+  }
+
+  .margin-mobile {
+    margin: 1rem !important;
+  }
+
+  #map {
+    width: 85%;
+    height: 500px;
+    background: #ffffff;
+    border: none;
+    margin: auto;
+  }
+
+  .img-legend {
+    width: 90%;
+    height: auto;
+    float: left;
+    margin-left: 5%;
+  }
+
+  .hidden-mobile {
+    display: none !important;
+  }
+
+  .leaflet-popup {
+    display: none !important;
+  }
+
+  .info h4 {
+    margin: 0 0 5px;
+    color: #000;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .info {
+    margin-top: 1500px;
+    padding: 6px 8px;
+    font: 12px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    -webkit-box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.65);
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.65);
+    width: 200px;
+  }
+
+  .info button {
+    display: block !important;
+  }
+
+  .help-saude {
+    width: 170px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  .title-mapas {
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .container-minimaps {
+    margin-left: 16px;
+    margin-bottom: 8px;
+  }
+}
+
+/* Deixar o fundo do mapa - tudo que nao seja o mapa - com o fundo branco*/
+#map .leaflet-tile-container {
+  display: none !important;
+}
+
+.leaflet-right .leaflet-control {
+  float: right;
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+
+.info {
+  box-shadow: none;
+}
+
+@media only screen and (max-width:600px) {
+  .close-btn {
+    left: 95% !important;
+  }
+
+  .leaflet-right .leaflet-control {
+    min-width: 200px !important;
+  }
+
+  .poptitle {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  .card-city-name-popup {
+    width: 80px;
+    height: 96px;
+    border: none;
+    margin: 3%;
+  }
+}
