@@ -18,7 +18,7 @@
   font-family: "Roboto Condensed", sans-serif !important;
 }
 
-.roboto-font {
+.opensans-font {
   font-family: "Open Sans", sans-serif;
 }
 
@@ -88,28 +88,6 @@ a:hover {
   border-radius: 0;
 }
 
-/* CARDS DO TOPO */
-.card-counter {
-  height: 90px;
-  padding: 8px;
-  background-color: #f7f7f7;
-  margin-right: 4px;
-  border-radius: 0px;
-  transition: 0.3s linear all;
-}
-
-.card-counter.danger {
-  background-color: #ba5b9e;
-  color: #fff;
-}
-
-.card-counter i {
-  font-size: 2.5em;
-  opacity: 0.2;
-  margin-top: 20px;
-}
-
-/* FINAL CARTOES */
 .badge-danger {
   background: #ba5b9e;
 }
@@ -118,12 +96,8 @@ a:hover {
   background: #fbba00;
 }
 
-.hr-corona {
-  border-top: 1px solid #4f5050;
-}
-
 .hr-corona-corpo {
-  border-top: 1px solid #b9b9b9;
+  border-top: 1px solid #dfdfdf;
   margin: 2% 20% !important;
 }
 
@@ -132,30 +106,20 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 
-.btn-nsc {
-  background-color: #ff6915;
-  color: white;
-}
-
-.btn-nsc:hover {
-  background-color: #ee9458;
-  color: white;
-}
-
 .cont {
   width: 100%;
   height: auto;
   padding: 4px;
 }
 
-#map, #map2 {
+#map {
   width: 100%;
   height: 660px;
   border: 1px solid #ffffff;
 }
 
 .img-legend {
-  width: 350px;
+  width: 40%;
   height: auto;
   float: left;
   margin-top: 4px;
@@ -182,24 +146,6 @@ a:hover {
   -webkit-box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.65);
   -moz-box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.65);
   box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.65);
-}
-
-.legend {
-  display: none;
-}
-
-.legend i {
-  width: 18px;
-  height: 18px;
-  float: left;
-  margin-right: 8px;
-  opacity: 0.7;
-}
-
-/* Minimaps */
-.container-minimaps {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .module {
@@ -262,81 +208,6 @@ a:hover {
 
 .leaflet-container .leaflet-control-attribution {
   display: none;
-}
-
-.help-saude {
-  width: 320px;
-  height: 40px;
-  font-size: 13px;
-  font-weight: bold;
-  text-align: left !important;
-  margin-bottom: 16px;
-}
-
-.list-group-item {
-  border: none;
-  margin: 8px;
-}
-
-.list-group-item>div {
-  width: 48px;
-  height: 48px;
-  background: #ff5b34;
-  border-radius: 50%;
-}
-
-.list-group-item>div:hover {
-  width: 48px;
-  height: 48px;
-  background: rgb(153, 40, 12);
-  border-radius: 50%;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-.list-group-item div i {
-  color: #fff;
-  font-size: 18px;
-  text-indent: 16px;
-  margin-top: 5px;
-}
-
-/* BOTOES SOCIAIS */
-.fa {
-  padding: 20px;
-  font-size: 24px;
-  width: 64px;
-  height: 64px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%;
-}
-
-.fa:hover {
-  opacity: 0.7;
-  text-decoration: none;
-  color: white;
-}
-
-.fa-facebook {
-  background: #3b5998;
-  color: white;
-}
-
-.fa-twitter {
-  background: #55acee;
-  color: white;
-}
-
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
-}
-
-.fa-instagram {
-  background: #9b2f77;
-  color: white;
 }
 
 /* Apenas animacao*/
@@ -455,7 +326,7 @@ a:hover {
   padding: .5rem !important;
   background-color: #dc3545 !important;
   left: 97% !important;
-  top: 0.5 !important;
+  top: 14px !important;
 }
 
 /* MEDIA QUERIES */
@@ -498,9 +369,9 @@ a:hover {
   }
 
   .img-legend {
-    width: 90%;
+    width: 100%;
     height: auto;
-    float: left;
+    float: right;
     margin-left: 5%;
   }
 
@@ -535,22 +406,10 @@ a:hover {
     display: block !important;
   }
 
-  .help-saude {
-    width: 170px;
-    font-size: 11px;
-    font-weight: bold;
-    margin-bottom: 16px;
-  }
-
   .title-mapas {
     font-size: 14px;
     margin-top: 8px;
     text-align: center;
-  }
-
-  .container-minimaps {
-    margin-left: 16px;
-    margin-bottom: 8px;
   }
 }
 

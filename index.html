@@ -18,21 +18,22 @@
 
     <div class="container-fluid">
         <h2 class="ml-2"><b>Mapa do vírus em Santa Catarina</b></h2>
+        <small class="badge rounded-pill bg-secondary">Atualizado em - <span id="data-caso-mais-recente"></small></div>
         <p class="ml-2">Acompanhe o avanço da covid-19 no Estado, detalhes de casos confirmados, ativos, curados, mortes, ocupação de leitos e onde buscar atendimento. O Painel do Coronavírus é atualizado diariamente e usa como base dados oficiais do governo do Estado e do Ministério da Saúde. Clique sobre o município desejado para ver mais informações</p>
         <div class="cont">
             <div class="row margin-mobile m-0 mb-1">
                 <!-- KPI CASOS CONFIRMADOS -->
                 <div class="col-xl-2 col-lg-2 col-sm-12 col-12 p-0">
-                    <div class="card bg-light card-kpi h90">
-                        <div class="row h90">
-                          <div class="col-4 h90">
+                    <div class="card bg-light card-kpi h100">
+                        <div class="row h100">
+                          <div class="col-4 h100">
                             <span class="fa-stack fa-2x">
                                 <i class="fas fa-circle fa-stack-2x bg-icon-kpi"></i>
                                 <i class="fas fa-clipboard-check fa-stack-1x fa-inverse"></i>
                             </span>
                           </div>
-                          <div class="col-8 h90">
-                            <div class="card-body h90">
+                          <div class="col-8 h100">
+                            <div class="card-body h100">
                               <h5 class="card-title roboto-font text-secondary m-0 font13">Casos Confirmados</h5>
                               <div class="card-text font22">
                                 <div class="roboto-font text-secondary" id="casos-confirmados"></div>
@@ -51,16 +52,16 @@
                 </div>
                 <!-- KPI CASOS ATIVOS -->
                 <div class="col-xl-2 col-lg-2 col-sm-12 col-12 p-0">
-                    <div class="card bg-light card-kpi h90">
-                        <div class="row h90">
-                          <div class="col-4 h90">
+                    <div class="card bg-light card-kpi h100">
+                        <div class="row h100">
+                          <div class="col-4 h100">
                             <span class="fa-stack fa-2x">
                                 <i class="fas fa-circle fa-stack-2x bg-icon-kpi"></i>
                                 <i class="fas fa-virus fa-stack-1x fa-inverse"></i>
                             </span>
                           </div>
-                          <div class="col-8 h90">
-                            <div class="card-body h90">
+                          <div class="col-8 h100">
+                            <div class="card-body h100">
                               <h5 class="card-title roboto-font text-secondary m-0 font13">Casos Ativos</h5>
                               <div class="card-text font22">
                                 <div class="roboto-font text-secondary" id="casos-ativos"></div>
@@ -77,16 +78,16 @@
                 </div>
                 <!-- KPI CURADOS -->
                 <div class="col-xl-2 col-lg-2 col-sm-12 col-12 p-0">
-                    <div class="card bg-light card-kpi h90">
-                        <div class="row h90">
-                          <div class="col-4 h90">
+                    <div class="card bg-light card-kpi h100">
+                        <div class="row h100">
+                          <div class="col-4 h100">
                             <span class="fa-stack fa-2x">
                                 <i class="fas fa-circle fa-stack-2x text-success"></i>
                                 <i class="fas fa-virus-slash fa-stack-1x fa-inverse"></i>
                             </span>
                           </div>
-                          <div class="col-8 h90">
-                            <div class="card-body h90">
+                          <div class="col-8 h100">
+                            <div class="card-body h100">
                               <h5 class="card-title roboto-font text-secondary m-0 font13">Curados</h5>
                               <div class="card-text font22">
                                 <div class="roboto-font text-secondary" id="curados"></div>
@@ -103,17 +104,17 @@
                 </div>
               <!-- KPI CIDADE CASOS ATIVOS -->
               <div class="col-xl-2 col-lg-2 col-sm-12 col-12 p-0">
-                <div class="card bg-light card-kpi h90">
-                    <div class="row h90">
-                      <div class="col-4 h90">
+                <div class="card bg-light card-kpi h100">
+                    <div class="row h100">
+                      <div class="col-4 h100">
                         <span class="fa-stack fa-2x">
                             <i class="fas fa-circle fa-stack-2x bg-icon-kpi"></i>
                             <i class="fas fa-hospital-user  fa-stack-1x fa-inverse"></i>
                         </span>
                       </div>
-                      <div class="col-8 h90">
-                        <div class="card-body h90">
-                          <h5 class="card-title roboto-font text-secondary m-0 card-tite-one-line font13">Cidades com Casos Ativos</h5>
+                      <div class="col-8 h100">
+                        <div class="card-body h100">
+                          <h5 class="card-title roboto-font text-secondary m-0 font13">Cidades com Casos Ativos</h5>
                           <div class="card-text font22">
                             <div class="roboto-font text-secondary" id="cidades-ativos"></div>
                           </div>
@@ -132,16 +133,16 @@
 
             <!-- KPI MORTES CONFIRMADAS -->
             <div class="col-xl-2 col-lg-2 col-sm-12 col-12 p-0">
-            <div class="card bg-light card-kpi h90">
-                <div class="row h90">
-                    <div class="col-4 h90">
+            <div class="card bg-light card-kpi h100">
+                <div class="row h100">
+                    <div class="col-4 h100">
                     <span class="fa-stack fa-2x">
                         <i class="fas fa-circle fa-stack-2x text-danger"></i>
                         <i class="fas fa-cross  fa-stack-1x fa-inverse"></i>
                     </span>
                     </div>
-                    <div class="col-8 h90">
-                    <div class="card-body h90">
+                    <div class="col-8 h100">
+                    <div class="card-body h100">
                         <h5 class="card-title roboto-font text-secondary m-0 font13">Mortes Confirmadas</h5>
                         <div class="card-text font22">
                         <div class="roboto-font text-secondary" id="mortes-confirmadas"></div>
@@ -161,16 +162,16 @@
 
             <!-- KPI MORTES + RECENTE -->
             <div class="col-xl-2 col-lg-2 col-sm-12 col-12 p-0">
-                <div class="card bg-light card-kpi h90">
-                    <div class="row h90">
-                        <div class="col-4 h90">
+                <div class="card bg-light card-kpi h100">
+                    <div class="row h100">
+                        <div class="col-4 h100">
                         <span class="fa-stack fa-2x">
                             <i class="fas fa-circle fa-stack-2x text-danger"></i>
                             <i class="fas fa-calendar-minus  fa-stack-1x fa-inverse"></i>
                         </span>
                         </div>
-                        <div class="col-8 h90">
-                        <div class="card-body h90">
+                        <div class="col-8 h100">
+                        <div class="card-body h100">
                             <h5 class="card-title roboto-font text-secondary m-0 font13">Mortes mais Recentes</h5>
                             <div class="card-text font22">
                             <div class="roboto-font text-secondary" id="mortes-mais-recentes"></div>
@@ -187,34 +188,41 @@
              </div>
             </div>
             <div class="row m-0 p-0">
-                <div class="col-md-9 col-12 m-0 p-0 mb-4">                  
-                    <div class="badge rounded-pill bg-light text-dark font13 mt-2 mb-2 p-2 w-100 hidden-desktop"> <i class='fas fa-info-circle'></i> Toque sobre um município para ver detalhes</div>
-                        <div id="map" class="animated fadeIn"></div>
+                <div class="col-12 col-xl-9 m-0 p-0 mb-4">
+                    <div class="badge rounded-pill bg-light text-dark font13 mt-2 mb-2 p-2 w-100 hidden-desktop">
+                        <i class='fas fa-info-circle'></i> Toque sobre um município para ver detalhes
+                    </div>
+                    <div id="map" class="animated fadeIn"></div>
                     <div class="row">
                         <div class="col-12">
                             <img src="./img/legenda.jpg" class="img-legend">
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-12 m-0 p-0">
+                <div class="col-12 col-xl-3 m-0 p-0">
                     <div class="row m-0 p-0">
-                        <div class="col-12">
-                            <div  class="badge bg-warning">Data última atualização <span id="data-caso-mais-recente"></span></div>
-                        </div>
-                        <div class="col-12 m-0 p-0">
-                            <iframe width="300" height="151" seamless frameborder="0" scrolling="no"
-                                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQA-2MrZI4mRbE4likrEmbIWf0mpqF9rv6N6yDjdOhruvLZE-CYQdCwEP3r2Dg_OxPPn3jnvL8GRHIw/pubchart?oid=1948737110&amp;format=interactive"></iframe>
-                        </div>
-                    </div>
-
-                    <div class="row m-0 p-0">
-                        <div class="col-12 m-0 p-0">
-                            <iframe width="300" height="475" seamless frameborder="0" scrolling="yes"
-                                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQA-2MrZI4mRbE4likrEmbIWf0mpqF9rv6N6yDjdOhruvLZE-CYQdCwEP3r2Dg_OxPPn3jnvL8GRHIw/pubchart?oid=1211889197&amp;format=interactive"></iframe>
+                        <div class="col-12 m-0 p-0 text-xl-start text-center">
+                            <iframe
+                              width="300"
+                              height="151"
+                              seamless
+                              frameborder="0"
+                              scrolling="no"
+                              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRG0GA2fpBN8IkZGVEM7a5SLpcsw2xk8jGoeQy8sEN_NfYWJ0UCiJX-W-lD4Jd6oGjA45LVrwVs1Y-k/pubchart?oid=339973685&format=interactive">
+                            </iframe>
                         </div>
                     </div>
-
                     <div class="row m-0 p-0">
+                        <div class="col-12 m-0 p-0 text-xl-start text-center">
+                            <iframe
+                              width="300"
+                              height="475"
+                              seamless
+                              frameborder="0"
+                              scrolling="yes"
+                              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRG0GA2fpBN8IkZGVEM7a5SLpcsw2xk8jGoeQy8sEN_NfYWJ0UCiJX-W-lD4Jd6oGjA45LVrwVs1Y-k/pubchart?oid=322960731&amp;format=interactive">
+                            </iframe>
+                        </div>
                         <div class="col-12 hidden-mobile">
                             <img src="./img/nsc.svg" alt="nsc comunicação logo" class="img-logo-rodape"
                                 style="margin-top: 1px">
@@ -322,64 +330,101 @@
                 </h2>
             </div>
         </div>
-        <hr class="m-5 hr-corona">
-        <div class="row">
-            <div class="col-12 text-center">
-                PAINEL DO CORONAVÍRUS
-            </div>
+        <hr class="m-5 hr-corona-corpo">
+        <div class="row">            
+            <h5 class="col-12 roboto-font text-center"><b>PAINEL DO CORONAVÍRUS</b></h5>
+            
             <div class="col-12 mt-2 mb-2">
-                <h6 class="color-nsctotal text-center">Clique e compartilhe nas redes</h6>
+                <h6 class="text-accent text-center roboto-font text-center"><b>Compartilhe nas redes</b></h6>
+
+                <ul class="list-group list-group-horizontal d-flex justify-content-center">
+                    <li class="list-group-item p-0 border-0 p-0 border-0">              
+                        <a href="https://twitter.com/intent/tweet?text=https://www.nsctotal.com.br/coronavirus/mapa-de-evolucao-do-virus">
+                            <span class="fa-stack fa-2x text-info">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-group-item p-0 border-0">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.nsctotal.com.br/coronavirus/mapa-de-evolucao-do-virus" target="_blank" title="Compartilhar no Facebook">
+                            <span class="fa-stack fa-2x text-primary">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>                
+                        </a>
+                    </li>
+                    <li class="list-group-item p-0 border-0">
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.nsctotal.com.br/coronavirus/mapa-de-evolucao-do-virus&title=Painel do Corona Vírus em SC&summary=Mapa da Evolução do Corona Vírus em Santa Catarina&source=NSC Total"
+                        target="_blank" title="Compartilhar no LinkedIn">
+                            <span class="fa-stack fa-2x text-info">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                            </span>                    
+                        </a>
+                    </li>
+                    <li class="list-group-item p-0 border-0">
+                        <a href="https://www.instagram.com/nsctotal/?hl=pt-br" target="_blank" title="Curta-nos no Instagram">
+                            <span class="fa-stack fa-2x text-warning">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>                        
+                        </a>
+                    </li>               
+                </ul>
+
+
+                  
                 <div class="col-md-12 col-sm-12 text-center">
-                    <a href="https://twitter.com/intent/tweet?text=https://www.nsctotal.com.br/coronavirus/mapa-de-evolucao-do-virus" class="fa fa-twitter"></a>
+                    
 
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.nsctotal.com.br/coronavirus/mapa-de-evolucao-do-virus" target="_blank"
-                    title="Compartilhar no Facebook" class="fa fa-facebook"></a>
+                    
 
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.nsctotal.com.br/coronavirus/mapa-de-evolucao-do-virus&title=Painel do Corona Vírus em SC&summary=Mapa da Evolução do Corona Vírus em Santa Catarina&source=NSC Total"
-                    target="_blank" title="Compartilhar no LinkedIn" class="fa fa-linkedin"></a>
+               
 
 
-                    <a href="https://www.instagram.com/nsctotal/?hl=pt-br" target="_blank" title="Curta-nos no Instagram" class="fa fa-instagram"></a>
+                    
                 </div>
             </div>
+
+
             <div class="col-12">
-                <h5><b>Participe</b></h5>
+                <h5 class="roboto-font"><b>Participe</b></h5>
                 Tem dúvidas, sugestões ou comentários?
                 <p><b>Escreva para: </b>  <a href="cristian.weiss@somosnsc.com.br">cristian.weiss@somosnsc.com.br</a></p>
             </div>
-            <div class="col-10">
-                <p><b>Produção:</b> NSC Total e NSC Lab</p>
-                <p>
-                    <b>Jornalismo de dados:</b>
-                    <br>
-                    <a href="mailto:cristian.weiss@somosnsc.com.br">Cristian Edel Weiss</a>
-                </p>
-                <p>
-                    <b>Reportagem:</b>
-                    <br>
-                    <a href="mailto:clarissa.cervieri@somosnsc.com.br">Clarissa Battistella </a> <br>
-                    <a href="mailto:guilherme.fernandes@somosnsc.com.br">Guilherme Simon Fernandes </a> <br>
-                    <a href="mailto:jean.laurindo@somosnsc.com.br">Jean Laurindo</a> <br>
-                    <a href="mailto:lariane.cargnini@somosnsc.com.br">Lariane Cagnini</a> <br>
-                    <a href="mailto:lucas.paraizo@somosnsc.com.br">Lucas Paraizo</a>
-                </p>
-                <p>
-                    <b>Design:</b><br />
-                    <a href="mailto:maiara.santos@somosnsc.com.br">Maiara Santos</a>
-                </p>
-                <p>
-                    <b>Desenvolvimento: </b><br />
-                    <a href="mailto:bruno.scheibler@somosnsc.com.br">Bruno Scheibler </a>
-                    <br />
-                    <a href="mailto:thiago.thomaz@somosnsc.com.br">Thiago Lúcio Bittencourt Thomaz </a>
-                </p>
+            <div class="col-12">           
+                <h5 class="roboto-font"><b>Produção</b></h5>                
+                <h6 class="roboto-font"><b>Jornalismo de dados:</b><span> <a href="mailto:cristian.weiss@somosnsc.com.br">  Cristian Edel Weiss</a></span></h6>
+            </div> 
+            <div class="col-12 mt-2">
+                <h6 class="roboto-font"><b>Reportagem:</b></h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item p-0 border-0"><a href="mailto:clarissa.cervieri@somosnsc.com.br">Clarissa Battistella </a></li>
+                    <li class="list-group-item p-0 border-0"><a href="mailto:guilherme.fernandes@somosnsc.com.br">Guilherme Simon Fernandes </a></li>
+                    <li class="list-group-item p-0 border-0"><a href="mailto:jean.laurindo@somosnsc.com.br">Jean Laurindo</a></li>
+                    <li class="list-group-item p-0 border-0"><a href="mailto:lariane.cargnini@somosnsc.com.br">Lariane Cagnini</a></li>
+                    <li class="list-group-item p-0 border-0"><a href="mailto:lucas.paraizo@somosnsc.com.br">Lucas Paraizo</a></li>
+                </ul>
+            </div>
+            <div class="col-12 mt-2">
+                <h6 class="roboto-font"><b>Design/ UX/ UI:</b></h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item p-0 border-0"><a href="mailto:thiago.thomaz@somosnsc.com.br">Thiago Lúcio Bittencourt Thomaz Silva</a></li>
+                    <li class="list-group-item p-0 border-0"><a href="mailto:maiara.santos@somosnsc.com.br">Maiara Santos</a></li>
+                </ul>
+            </div>
+            <div class="col-12 mt-2">
+                <h6 class="roboto-font"><b>Desenvolvimento:</b></h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item p-0 border-0"><a href="mailto:thiago.thomaz@somosnsc.com.br">Thiago Lúcio Bittencourt Thomaz Silva</a></li>
+                    <li class="list-group-item p-0 border-0"><a href="mailto:bruno.scheibler@somosnsc.com.br">Bruno Scheibler</a></li>
+                </ul>
+            </div>
             </div>
         </div>
     </div>
-
-
     <!-- Scripts -->
-
     <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
     <script type="text/javascript" src="./js/leaflet.js"></script>
     <script type="text/javascript" src="./js/leaflet-providers.js"></script>
@@ -394,6 +439,5 @@
     <script src="https://spreadsheets.google.com/feeds/list/1r4OQlxA51hKLtpcYl_GFEPkGUFEFZ7y9LcW3Bq6GB4o/4/public/values?alt=json-in-script&callback=saveKpi"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-k
   </body>
 </html>

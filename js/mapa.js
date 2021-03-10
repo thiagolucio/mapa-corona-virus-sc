@@ -76,8 +76,6 @@ function createDict(map) {
   }
 }
 
-console.log('deoijdeoidjeoi ===> ', statesData)
-
 function getKpi() {
   const data = JSON.parse(localStorage.getItem("kpi"));
   var feed = data.feed;
@@ -195,7 +193,6 @@ function drawMapDefault() {
       "<div class='col-10'>" +
       (props ?
         "</div>" +
-        "</div>" +
         "<div class='div-city-name-popup'>" +
         "<h5 class='col-10 badge bg-secondary rounded-pill city-name-popup roboto-font text-center'>" +
         "Casos em " + city.name +
@@ -204,8 +201,8 @@ function drawMapDefault() {
         "</span>" +
         "</h5>" +
         "</div>" +
-        "<div class='row  animated fadeIn'>" +
-        "<div class='col-3 col-lg-2 m-1'>" +
+        "<div class='row justify-content-center animated fadeIn'>" +
+        "<div class='col-3 col-lg-2 ms-1'>" +
         "<div class='card card-city-name-popup text-center'>" +
         "<div class='card-header'>" +
         "<span class='fa-stack fa-1x text-danger'>" +
@@ -219,7 +216,7 @@ function drawMapDefault() {
         "</div>" +
         "</div>" +
         "</div>" +
-        "<div class='col-3 col-lg-2 m-1'>" +
+        "<div class='col-3 col-lg-2 ms-1'>" +
         "<div class='card card-city-name-popup text-center'>" +
         "<div class='card-header'>" +
         "<span class='fa-stack fa-1x text-success'>" +
@@ -233,7 +230,7 @@ function drawMapDefault() {
         "</div>" +
         "</div>" +
         "</div>" +
-        "<div class='col-3 col-lg-2 m-1'>" +
+        "<div class='col-3 col-lg-2 ms-1'>" +
         "<div class='card card-city-name-popup text-center'>" +
         "<div class='card-header'>" +
         "<span class='fa-stack fa-1x text-secondary'>" +
@@ -247,7 +244,7 @@ function drawMapDefault() {
         "</div>" +
         "</div>" +
         "</div>" +
-        "<div class='col-3 col-lg-2 m-1'>" +
+        "<div class='col-3 col-lg-2 ms-1'>" +
         "<div class='card card-city-name-popup text-center'>" +
         "<div class='card-header'>" +
         "<span class='fa-stack fa-1x text-secondary'>" +
@@ -261,7 +258,7 @@ function drawMapDefault() {
         "</div>" +
         "</div>" +
         "</div>" +
-        "<div class='col-3 col-lg-2 m-1'>" +
+        "<div class='col-3 col-lg-2 ms-1'>" +
         "<div class='card card-city-name-popup text-center'>" +
         "<div class='card-header'>" +
         "<span class='fa-stack fa-1x text-warning'>" +
@@ -276,20 +273,18 @@ function drawMapDefault() {
         "</div>" +
         "</div>" +
         "</div>" :
-        "<div class='help-saude font13 text-left hidden-mobile text-accent'> <i class='fas fa-info-circle'></i> Clique sobre um município para ver<br /> detalhes</div>");
+        "<div class='badge rounded-pill bg-secondary hidden-mobile'> <i class='fas fa-info-circle'></i> Passe o mouse sobre o município para ver detalhes</div>");
   };
 
   info.addTo(map);
-
-  var legend = L.control({
-    position: "bottomright"
-  });
 
   L.Control.Watermark = L.Control.extend({
     onAdd: function(map) {
       var img = L.DomUtil.create("img");
       img.src = "img/nsc.svg";
       img.style.width = "70px";
+      img.style.marginBottom = "30px";
+      img.style.marginLeft = "20px"
       return img;
     },
     onRemove: function(map) {
@@ -304,30 +299,6 @@ function drawMapDefault() {
   L.control.watermark({
     position: "bottomleft"
   }).addTo(map);
-
-  legend.onAdd = function(map) {
-    var div = L.DomUtil.create("div", "info legend"),
-      grades = [50, 100, 500, 1000, 5000, 10000, 20000, 100000],
-      labels = [],
-      from,
-      to;
-
-    for (var i = 0; i < grades.length; i++) {
-      from = grades[i];
-      to = grades[i + 1];
-
-      labels.push(
-        '<i style="background:' +
-        getColor(from + 1) +
-        '"></i> ' +
-        from +
-        (to ? "&ndash;" + to : "+")
-      );
-    }
-    div.innerHTML = labels.join("<br>");
-    return div;
-  };
-  legend.addTo(map);
 }
 
 // get color depending on population density value
@@ -357,12 +328,7 @@ function highlightFeature(e) {
   let city = e.sourceTarget.feature.properties ?
     new City(e.sourceTarget.feature.properties.NM_MUNICIP) :
     new City("");
-  var popupContent =
-    "<b>Saiba mais em:</b><br><a href=" +
-    city.news +
-    " target='_blank'>" +
-    city.news +
-    "</href>";
+  var popupContent = "<small class='badge'>Saiba mais em: <br><br><a href=" + city.news + " target='_blank'>NSC Total</a></small>";
   e.target.bindPopup(popupContent);
 
   layer.setStyle({
@@ -397,12 +363,7 @@ function zoomToFeatureMap(e) {
     new City("");
 
   var popupContent =
-    "<b>Saiba mais em:</b><br><a href=" +
-    city.news +
-    " target='_blank'>" +
-    city.news +
-    "</href>";
+    "<b>Saiba mais em:</b><br><a href=" + city.news + " target='_blank'>" + city.news + "</href>";
   e.target.bindPopup(popupContent);
   info.update(layer.feature.properties);
-  // map.fitBounds(e.target.getBounds());
 }
