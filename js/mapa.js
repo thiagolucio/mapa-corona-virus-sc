@@ -82,14 +82,21 @@ function getKpi() {
   var entries = feed.entry;
 
   document.getElementById("casos-confirmados").innerHTML = entries[2].gsx$casosconfirmados.$t;
-  document.getElementById("confirmados-24horas").innerHTML = entries[4].gsx$casosconfirmados.$t;
+  document.getElementById("confirmados-24horas").innerHTML = ((entries[4].gsx$casosconfirmados.$t < 0) ? "<i class='fas fa-arrow-circle-down fa-lg text-success'></i>&nbsp;" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i> &nbsp;") + entries[4].gsx$casosconfirmados.$t;
   document.getElementById("casos-ativos").innerHTML = entries[2].gsx$dataprimeiraconfirmacao.$t;
   document.getElementById("curados").innerHTML = entries[2].gsx$datacasomaisrecente.$t;
   document.getElementById("cidades-ativos").innerHTML = entries[2].gsx$cidadesafetadas.$t;
   document.getElementById("mortes-confirmadas").innerHTML = entries[2].gsx$mortes.$t;
-  document.getElementById("mortes-24h").innerHTML = entries[4].gsx$mortes.$t;
+  document.getElementById("mortes-24h").innerHTML = ((entries[4].gsx$mortes.$t < 0) ? "<i class='fas fa-arrow-circle-down fa-lg text-success'></i>&nbsp;" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i>&nbsp;") + entries[4].gsx$mortes.$t;
   document.getElementById("mortes-mais-recentes").innerHTML = entries[2].gsx$mortemaisrecente.$t;
   document.getElementById("data-caso-mais-recente").innerHTML = entries[0].gsx$datacasomaisrecente.$t;
+
+
+  document.getElementById("icon-casos-ativos").innerHTML = ((entries[2].gsx$dataprimeiraconfirmacao.$t < 0) ? "<i class='fas fa-arrow-circle-down fa-lg text-success'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i> ") + " ";
+  document.getElementById("icon-curados").innerHTML = ((entries[2].gsx$datacasomaisrecente.$t < 0) ? "<i class='fas fa-arrow-circle-down fa-lg text-danger'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-success'></i>") + " ";
+  document.getElementById("icon-cidade-aticos").innerHTML = ((entries[2].gsx$cidadesafetadas.$t < 0) ?  "<i class='fas fa-arrow-circle-down fa-lg text-success'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i>") + " ";
+  document.getElementById("icon-mortes-recentes").innerHTML = ((entries[2].gsx$mortes.$t < 0) ?  "<i class='fas fa-arrow-circle-down fa-lg text-success'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i>") + " ";
+
 }
 
 function formatDate(string) {

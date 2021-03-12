@@ -1,6 +1,7 @@
 # Mapa do Corona Vírus - Projeto - versão 1
 ### Link da Matéria:
-- [Materia do Corona Vírus versão 1: ][materia]
+- [Materia do Corona Vírus versão 1][materia]
+
 [materia]: https://www.nsctotal.com.br/coronavirus/mapa-de-evolucao-do-virus
 
 #### Sobre o Desenvolvimento:
