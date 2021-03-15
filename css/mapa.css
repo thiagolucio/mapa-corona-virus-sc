@@ -31,6 +31,16 @@ html, body {
   font-family: "Open Sans", sans-serif;
 }
 
+.title-mapa-corona {
+  background-image: url('../img/corona.jpg');
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 5rem;
+  font-family: "Roboto Condensed", sans-serif !important;
+}
+
+
 p {
   font-weight: 300;
   color: #4f5050;
