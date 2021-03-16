@@ -440,4 +440,5 @@ a:hover {
     margin: 3%;
   }
 }
-.leaflet-popup  {display: none!important;}
+
+.leaflet-popup, .leaflet-control-attribution  {display: none!important;}
