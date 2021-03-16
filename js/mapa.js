@@ -1,6 +1,5 @@
 var geojson;
 var dict = {};
-var maxData = "01/01/2020";
 var layer;
 var info;
 
@@ -94,8 +93,8 @@ function getKpi() {
 
   document.getElementById("icon-casos-ativos").innerHTML = ((entries[2].gsx$dataprimeiraconfirmacao.$t < 0) ? "<i class='fas fa-arrow-circle-down fa-lg text-success'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i> ") + " ";
   document.getElementById("icon-curados").innerHTML = ((entries[2].gsx$datacasomaisrecente.$t < 0) ? "<i class='fas fa-arrow-circle-down fa-lg text-danger'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-success'></i>") + " ";
-  document.getElementById("icon-cidade-aticos").innerHTML = ((entries[2].gsx$cidadesafetadas.$t < 0) ?  "<i class='fas fa-arrow-circle-down fa-lg text-success'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i>") + " ";
-  document.getElementById("icon-mortes-recentes").innerHTML = ((entries[2].gsx$mortes.$t < 0) ?  "<i class='fas fa-arrow-circle-down fa-lg text-success'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i>") + " ";
+  document.getElementById("icon-cidade-aticos").innerHTML = ((entries[2].gsx$cidadesafetadas.$t < 0) ? "<i class='fas fa-arrow-circle-down fa-lg text-success'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i>") + " ";
+  document.getElementById("icon-mortes-recentes").innerHTML = ((entries[2].gsx$mortes.$t < 0) ? "<i class='fas fa-arrow-circle-down fa-lg text-success'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i>") + " ";
 
 }
 
@@ -173,26 +172,26 @@ function drawMapDefault() {
 
   L.tileLayer(
     "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-      maxZoom: 10,
-      minZoom: 6,
-      touchHover: true,
-      touchZoom: true,
-      fillColor: '#FFFFFF',
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-    }
+    maxZoom: 10,
+    minZoom: 6,
+    touchHover: true,
+    touchZoom: true,
+    fillColor: '#FFFFFF',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  }
   ).addTo(map);
 
   // control that shows state info on hover
   info = L.control();
 
-  info.onAdd = function(map) {
+  info.onAdd = function (map) {
     this._div = L.DomUtil.create("div", "info");
     this.update();
     return this._div;
   };
 
 
-  info.update = function(props) {
+  info.update = function (props) {
     let city = props ? new City(props.NM_MUNICIP) : new City("");
     this._div.innerHTML =
       "<div class='row animated fadeIn'>" +
@@ -208,34 +207,7 @@ function drawMapDefault() {
         "</h5>" +
         "</div>" +
         "<div class='row justify-content-center animated fadeIn'>" +
-        "<div class='col-3 col-lg-2 ms-1'>" +
-        "<div class='card card-city-name-popup text-center'>" +
-        "<div class='card-header'>" +
-        "<span class='fa-stack fa-1x text-danger'>" +
-        "<i class='fas fa-circle fa-stack-2x'></i>" +
-        "<i class='fas fa-cross fa-stack-1x fa-inverse'></i>" +
-        "</span>" +
-        "</div>" +
-        "<div class='card-body p-0'>" +
-        "<div class='card-title'>" + city.totalMortes + "</div>" +
-        "<div class='card-text'>Total Mortes</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "<div class='col-3 col-lg-2 ms-1'>" +
-        "<div class='card card-city-name-popup text-center'>" +
-        "<div class='card-header'>" +
-        "<span class='fa-stack fa-1x text-success'>" +
-        "<i class='fas fa-circle fa-stack-2x'></i>" +
-        "<i class='fas fa-virus-slash fa-stack-1x fa-inverse'></i>" +
-        "</span>" +
-        "</div>" +
-        "<div class='card-body p-0'>" +
-        "<div class='card-title'>" + city.totalCurados + "</div>" +
-        "<div class='card-text'>Total Curados</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
+
         "<div class='col-3 col-lg-2 ms-1'>" +
         "<div class='card card-city-name-popup text-center'>" +
         "<div class='card-header'>" +
@@ -250,6 +222,7 @@ function drawMapDefault() {
         "</div>" +
         "</div>" +
         "</div>" +
+
         "<div class='col-3 col-lg-2 ms-1'>" +
         "<div class='card card-city-name-popup text-center'>" +
         "<div class='card-header'>" +
@@ -264,6 +237,38 @@ function drawMapDefault() {
         "</div>" +
         "</div>" +
         "</div>" +
+
+
+        "<div class='col-3 col-lg-2 ms-1'>" +
+        "<div class='card card-city-name-popup text-center'>" +
+        "<div class='card-header'>" +
+        "<span class='fa-stack fa-1x text-success'>" +
+        "<i class='fas fa-circle fa-stack-2x'></i>" +
+        "<i class='fas fa-virus-slash fa-stack-1x fa-inverse'></i>" +
+        "</span>" +
+        "</div>" +
+        "<div class='card-body p-0'>" +
+        "<div class='card-title'>" + city.totalCurados + "</div>" +
+        "<div class='card-text'>Total Curados</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+
+        "<div class='col-3 col-lg-2 ms-1'>" +
+        "<div class='card card-city-name-popup text-center'>" +
+        "<div class='card-header'>" +
+        "<span class='fa-stack fa-1x text-danger'>" +
+        "<i class='fas fa-circle fa-stack-2x'></i>" +
+        "<i class='fas fa-cross fa-stack-1x fa-inverse'></i>" +
+        "</span>" +
+        "</div>" +
+        "<div class='card-body p-0'>" +
+        "<div class='card-title'>" + city.totalMortes + "</div>" +
+        "<div class='card-text'>Total Mortes</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+
         "<div class='col-3 col-lg-2 ms-1'>" +
         "<div class='card card-city-name-popup text-center'>" +
         "<div class='card-header'>" +
@@ -278,6 +283,7 @@ function drawMapDefault() {
         "</div>" +
         "</div>" +
         "</div>" +
+
         "</div>" :
         "<div class='badge rounded-pill bg-secondary hidden-mobile'> <i class='fas fa-info-circle'></i> Passe o mouse sobre o município para ver detalhes</div>");
   };
@@ -285,7 +291,7 @@ function drawMapDefault() {
   info.addTo(map);
 
   L.Control.Watermark = L.Control.extend({
-    onAdd: function(map) {
+    onAdd: function (map) {
       var img = L.DomUtil.create("img");
       img.src = "img/nsc.svg";
       img.style.width = "70px";
@@ -293,12 +299,12 @@ function drawMapDefault() {
       img.style.marginLeft = "20px"
       return img;
     },
-    onRemove: function(map) {
+    onRemove: function (map) {
       // add rule if necessary
     }
   });
 
-  L.control.watermark = function(opts) {
+  L.control.watermark = function (opts) {
     return new L.Control.Watermark(opts);
   };
 
@@ -309,21 +315,17 @@ function drawMapDefault() {
 
 // get color depending on population density value
 function getColor(d) {
-  return d > 20000 ?
-    "#270B14" :
-    d > 10000 ?
-    "#2C1635" :
-    d > 5000 ?
-    "#59264E" :
-    d > 1000 ?
-    "#6D3558" :
-    d > 500 ?
-    "#824864" :
-    d > 100 ?
-    "#995C71" :
-    d >= 50 ?
-    "#B2737F" :
-    "#CC8C8E";
+  return d >= 5000 ? "#270B14" :
+    d > 3000 ? "#2C1635" :
+      d > 1000 ? "#59264E" :
+        d > 500 ? "#6D3558" :
+          d > 200 ? "#824864" :
+            d > 100 ? "#995C71" :
+              d > 50 ? "#B2737F" :
+                d > 10 ? "#c19797" :
+                  d >= 1 ? "#e1cabc" :
+                    d <= 0 ? "#d9e5a4" :
+                      "#d9e5a4";
 }
 
 function highlightFeature(e) {
