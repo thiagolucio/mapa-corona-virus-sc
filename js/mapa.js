@@ -211,7 +211,7 @@ function drawMapDefault() {
         "<div class='col-3 col-lg-2 ms-1'>" +
         "<div class='card card-city-name-popup text-center'>" +
         "<div class='card-header'>" +
-        "<span class='fa-stack fa-1x text-secondary'>" +
+        "<span class='fa-stack fa-1x color-light-green'>" +
         "<i class='fas fa-circle fa-stack-2x'></i>" +
         "<i class='fas fa-viruses fa-stack-1x fa-inverse'></i>" +
         "</span>" +
@@ -242,7 +242,7 @@ function drawMapDefault() {
         "<div class='col-3 col-lg-2 ms-1'>" +
         "<div class='card card-city-name-popup text-center'>" +
         "<div class='card-header'>" +
-        "<span class='fa-stack fa-1x text-success'>" +
+        "<span class='fa-stack fa-1x color-dark-green'>" +
         "<i class='fas fa-circle fa-stack-2x'></i>" +
         "<i class='fas fa-virus-slash fa-stack-1x fa-inverse'></i>" +
         "</span>" +
@@ -257,7 +257,7 @@ function drawMapDefault() {
         "<div class='col-3 col-lg-2 ms-1'>" +
         "<div class='card card-city-name-popup text-center'>" +
         "<div class='card-header'>" +
-        "<span class='fa-stack fa-1x text-danger'>" +
+        "<span class='fa-stack fa-1x color-pink'>" +
         "<i class='fas fa-circle fa-stack-2x'></i>" +
         "<i class='fas fa-cross fa-stack-1x fa-inverse'></i>" +
         "</span>" +
@@ -272,7 +272,7 @@ function drawMapDefault() {
         "<div class='col-3 col-lg-2 ms-1'>" +
         "<div class='card card-city-name-popup text-center'>" +
         "<div class='card-header'>" +
-        "<span class='fa-stack fa-1x text-warning'>" +
+        "<span class='fa-stack fa-1x color-yellow'>" +
         "<i class='fas fa-circle fa-stack-2x'></i>" +
         "<i class='fas fa-balance-scale fa-stack-1x fa-inverse'></i>" +
         "</span>" +
