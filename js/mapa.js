@@ -311,8 +311,8 @@ function drawMapDefault() {
 
 // get color depending on population density value
 function getColor(d) {
-  return d >= 10001 ? "#270B14" :
-    d >= 10000 ? "#2C1635" :
+  return d > 10001 ? "#270B14" :
+    d == 10000 ? "#2C1635" :
       d >= 5000 ? "#59264E" :
         d >= 1000 ? "#6D3558" :
           d >= 500 ? "#824864" :

@@ -200,31 +200,6 @@ a:hover {
   outline: 0;
 }
 
-.leaflet-container a.leaflet-popup-close-button {
-  top: 3px;
-  right: 5px;
-  color: #53f8fd;
-}
-
-.leaflet-popup-content-wrapper, .leaflet-popup-tip {
-  background: #333333 !important;
-  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
-}
-
-.leaflet-popup-content>b {
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-.leaflet-popup-content a:link, .leaflet-popup-content a:visited {
-  color: #53f8fd;
-  text-decoration: underline;
-}
-
-.leaflet-container .leaflet-control-attribution {
-  display: none;
-}
-
 /* Apenas animacao*/
 .animated {
   -webkit-animation-duration: 1s;
@@ -465,3 +440,4 @@ a:hover {
     margin: 3%;
   }
 }
+.leaflet-popup  {display: none!important;}
