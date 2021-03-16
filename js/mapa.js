@@ -1,5 +1,6 @@
 var geojson;
 var dict = {};
+var maxData = "01/01/2020";
 var layer;
 var info;
 
@@ -90,12 +91,7 @@ function getKpi() {
   document.getElementById("mortes-mais-recentes").innerHTML = entries[2].gsx$mortemaisrecente.$t;
   document.getElementById("data-caso-mais-recente").innerHTML = entries[0].gsx$datacasomaisrecente.$t;
 
-
-  document.getElementById("icon-casos-ativos").innerHTML = ((entries[2].gsx$dataprimeiraconfirmacao.$t < 0) ? "<i class='fas fa-arrow-circle-down fa-lg text-success'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i> ") + " ";
-  document.getElementById("icon-curados").innerHTML = ((entries[2].gsx$datacasomaisrecente.$t < 0) ? "<i class='fas fa-arrow-circle-down fa-lg text-danger'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-success'></i>") + " ";
-  document.getElementById("icon-cidade-aticos").innerHTML = ((entries[2].gsx$cidadesafetadas.$t < 0) ? "<i class='fas fa-arrow-circle-down fa-lg text-success'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i>") + " ";
-  document.getElementById("icon-mortes-recentes").innerHTML = ((entries[2].gsx$mortes.$t < 0) ? "<i class='fas fa-arrow-circle-down fa-lg text-success'></i>" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i>") + " ";
-
+  document.getElementById("icon-casos-ativos").innerHTML = ((entries[4].gsx$dataprimeiraconfirmacao.$t < 0) ? "<i class='fas fa-arrow-circle-down fa-lg text-success'></i> &nbsp;" : "<i class='fas fa-arrow-circle-up fa-lg text-danger'></i> &nbsp;") + entries[4].gsx$dataprimeiraconfirmacao.$t;
 }
 
 function formatDate(string) {
@@ -315,18 +311,19 @@ function drawMapDefault() {
 
 // get color depending on population density value
 function getColor(d) {
-  return d >= 5000 ? "#270B14" :
-    d > 3000 ? "#2C1635" :
-      d > 1000 ? "#59264E" :
-        d > 500 ? "#6D3558" :
-          d > 200 ? "#824864" :
-            d > 100 ? "#995C71" :
-              d > 50 ? "#B2737F" :
-                d > 10 ? "#c19797" :
+  return d >= 10001 ? "#270B14" :
+    d >= 10000 ? "#2C1635" :
+      d >= 5000 ? "#59264E" :
+        d >= 1000 ? "#6D3558" :
+          d >= 500 ? "#824864" :
+            d >= 100 ? "#995C71" :
+              d >= 50 ? "#B2737F" :
+                d >= 10 ? "#c19797" :
                   d >= 1 ? "#e1cabc" :
                     d <= 0 ? "#d9e5a4" :
                       "#d9e5a4";
 }
+
 
 function highlightFeature(e) {
   geojson.resetStyle(layer);

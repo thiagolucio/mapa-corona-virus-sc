@@ -1,31 +1,3 @@
-/* Cores do sistema
-#ba5b9e - rosa
-#fbba00 - amarelo
-#408080 - verde escuro
-#009ba4 - verde claro
-#3a3a3a - dark
-#59264e - roxo escuro
-#eaeaea - cinza
- #408080
-*/
-
-.bg-light-green {background: #009ba4;}
-.bg-dark-green {background: #408080;}
-.bg-gray {background: #eaeaea;}
-.bg-yellow {background: #fbba00;}
-.bg-pink {background: #ba5b9e;}
-.bg-purple {background: #59264e;}
-
-
-.color-light-green {color: #009ba4;}
-.color-dark-green {color: #408080;}
-.color-gray {color: #eaeaea;}
-.color-yellow {color: #fbba00;}
-.color-pink {color: #ba5b9e;}
-.color-purple {color: #59264e;}
-
-
-
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
@@ -123,6 +95,21 @@ a:hover {
 .badge-warning {
   background: #fbba00;
 }
+
+.bg-light-green {background: #009ba4;}
+.bg-dark-green {background: #408080;}
+.bg-gray {background: #eaeaea;}
+.bg-yellow {background: #fbba00;}
+.bg-pink {background: #ba5b9e;}
+.bg-purple {background: #59264e;}
+
+.color-light-green {color: #009ba4;}
+.color-dark-green {color: #408080;}
+.color-gray {color: #eaeaea;}
+.color-yellow {color: #fbba00;}
+.color-pink {color: #ba5b9e;}
+.color-purple {color: #59264e;}
+
 
 .hr-corona-corpo {
   border-top: 1px solid #dfdfdf;
@@ -397,10 +384,9 @@ a:hover {
   }
 
   .img-legend {
+    max-width: 100%;
     width: 100%;
     height: auto;
-    float: right;
-    margin-left: 5%;
   }
 
   .hidden-mobile {
