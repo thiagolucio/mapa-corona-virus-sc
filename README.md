@@ -20,6 +20,16 @@
 
 - Não coloque conteúdos AMP neste projeto. O portal da NSC Total já possui essa solução, quando vc inclúi na página via Drupal essa solução já é aplicada ao link da página onde ela é "iframezada". Então não faça inclusões de conf AMP Aqui. 
 
+### No Drupal o código que deve ser implementado é o abaixo:
+``` <iframe src="https://files.nsctotal.com.br/especiais/coronavirus/index.html" width="100%" height="8000px" frameborder="0" border="0" cellspacing="0" scrolling="no"></iframe> ```
+
+- Existe um link de produção redundante em: https://mapa-corona-virus-sc.vercel.app/
+- Você pode recorrer à ele para substituir temporariamente até resolver problemas de cache (Aquia e CDN ) dos Servidores de produção pois muitas vezes demora a atualizar o conteúdo a ser mostrado de novas versões. 
+
+``` <iframe src="https://mapa-corona-virus-sc.vercel.app/" width="100%" height="8000px" frameborder="0" border="0" cellspacing="0" scrolling="no"></iframe> ```
+
+
+
 
 ## Referências:
 - [Página especial do coronavírus no NSC Total][coronavirus]
